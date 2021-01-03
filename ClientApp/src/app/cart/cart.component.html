@@ -1,0 +1,20 @@
+<h3>Your shopping cart</h3>
+
+<div class="cart-item" *ngFor="let item of items" style="display:flex">
+  <div>
+    <span>{{ item.name }}</span>
+    <span style="position: absolute; right: 25%;">{{ item.price | currency }}</span>
+  </div>
+</div>
+
+<form *ngIf="items && loggedIn" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <input id="address" type="text" placeholder="Your shipping address..." formControlName="address">
+  </div><br />
+
+  <button class="button" type="submit" style="border: none; width: 30%;">Place order</button>
+
+</form>
+
+<button (click)="clearCart()" class="button" style="border: none; width: 30%;">Clear cart</button>

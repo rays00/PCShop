@@ -1,0 +1,13 @@
+<h2>Our Products</h2>
+
+<div id="products">
+  <div *ngFor="let product of products | async let productId = index" style=" width: 100%; border: 0.5px solid #f7f7f7; padding: 25px; margin-top: 10px;">
+    <div>
+
+      <a [routerLink]="['/product', product.id]"><h5>{{product.name}}</h5></a><br />
+      <img src="https://pbs.twimg.com/profile_images/757615693269434370/EXPHoF1z.jpg" alt="Alternate Text" width="128" />
+      <h6>{{product.price | currency}}</h6>
+    </div>
+
+  </div>
+</div>

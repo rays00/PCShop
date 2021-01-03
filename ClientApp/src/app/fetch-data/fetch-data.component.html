@@ -1,0 +1,16 @@
+  <p *ngIf="!product"><em>Loading...</em></p>
+
+  <div *ngIf="product">
+    <h2 id="productName">{{product.name}}</h2>
+
+    <img src="https://pbs.twimg.com/profile_images/757615693269434370/EXPHoF1z.jpg" alt="Alternate Text" width="128" /><br />
+
+    <span>Manufacturers</span>
+    <ul *ngFor="let vendor of product.vendors">
+      <li>{{vendor.name}}</li>
+    </ul>
+    <span>Hurry up! We have low stock for this product. </span><br />
+    <span>Price: {{product.price | currency}}</span><br />
+
+    <button (click)="addToCart(product)" style="border: none; width: 30%;"><b>Add to cart</b></button>
+  </div>

@@ -1,0 +1,18 @@
+ <p *ngIf="!user"><em>Loading...</em></p>
+
+<div *ngIf="user">
+  Hi, {{user.firstName}} {{user.lastName}} <br />
+
+  <h1>My orders</h1>
+  <div *ngIf="orders">
+    <div *ngFor="let order of orders; index as i" style="padding:10px">
+      <div>
+        <span>{{i + 1}}. <b>#{{order.id}}</b></span><br />
+        <span style="font-size: 18px">Ordered products:</span><br />
+        <div *ngFor="let product of order.productNames; index as i">
+          {{i + 1}}. {{product}}
+        </div>
+        <span><b>Total: </b>{{order.total | currency}}</span>
+      </div>
+  </div>
+</div>

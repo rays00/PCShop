@@ -1,0 +1,14 @@
+<h3>Register a new account</h3>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+
+  <div>
+    <input id="email" type="text" placeholder="Your email..." formControlName="email">
+    <input id="password" type="password" placeholder="Your password..." formControlName="password">
+    <input id="firstname" type="text" placeholder="Your firstname..." formControlName="firstName">
+    <input id="lastname" type="text" placeholder="Your lastname..." formControlName="lastName">
+  </div><br />
+
+  <button class="button" type="submit" style="border: none; width: 30%;">Register</button>
+
+</form>
